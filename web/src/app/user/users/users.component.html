@@ -1,0 +1,120 @@
+
+<body>
+  <div class="container">
+      <div class="row">
+          <h4 class="col-md-11 pages-header">Użytkownicy</h4>
+      </div>
+    </div>
+<mat-accordion class="example-headers-align" *ngFor="let user of users">
+<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{user.email}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="container">
+    <div class="row">
+
+      <!--name-->
+      <div class="col-md-2 user-table">
+        <div class="row">
+          <div class="col-md-12 user-header">
+            <span>Imię</span>
+          </div>
+          <div class="col-md-12 user-content">
+            <mat-form-field appearance="outline">
+              <mat-label>{{user.name}}</mat-label>
+              <input matInput placeholder="{{user.name}}" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <!--age-->
+      <div class="col-md-1 user-table">
+        <div class="row">
+          <div class="col-md-12 user-header">
+            <span>Wiek</span>
+          </div>
+          <div class="col-md-12 user-content">
+            <mat-form-field appearance="outline">
+              <mat-label>{{user.age}}</mat-label>
+              <input matInput type="number" min="1" placeholder="{{user.age}}" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--mail-->
+      <div class="col-md-3  user-table">
+        <div class="row">
+          <div class="col-md-12 user-header">
+            <span>Email</span>
+          </div>
+          <div class="col-md-12 user-content">
+            <mat-form-field appearance="outline">
+              <mat-label>{{user.email}}</mat-label>
+              <input matInput placeholder="{{user.email}}" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--login-->
+      <div class="col-md-2 user-table">
+        <div class="row">
+          <div class="col-md-12 user-header">
+            <span>Login</span>
+          </div>
+          <div class="col-md-12 user-content">
+            <mat-form-field appearance="outline">
+              <mat-label>{{user.account.login}}</mat-label>
+              <input matInput placeholder="{{user.account.login}}" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--password-->
+      <div class="col-md-2 user-table">
+        <div class="row">
+          <div class="col-md-12 user-header">
+            <span>Hasło</span>
+          </div>
+          <div class="col-md-12 user-content">
+            <mat-form-field appearance="outline">
+              <mat-label>{{user.account.password}}</mat-label>
+              <input matInput placeholder="{{user.account.password}}" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--acces-right-->
+      <div class="col-md-2">
+        <div class="row">
+          <div class="col-md-12 user-header">
+            <span>Prawa dostępu</span>
+          </div>
+          <div class="col-md-12 user-content">
+            <mat-form-field appearance="outline">
+              <mat-label>{{user.account.accessRight}}</mat-label>
+              <mat-select placeholder="Prawa dostępu" [(ngModel)]="user.account.accessRight">
+                <mat-option *ngFor="let accessRight of accessRights" [value]="accessRight">
+                  {{accessRight}}
+                </mat-option>
+
+              </mat-select>
+
+            </mat-form-field>
+
+          </div>
+          <button  mat-raised-button color="accent" (click)="changeAccessRights(user)">Zmień prawo dostępu</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</mat-expansion-panel>
+</mat-accordion>
+
+</body>

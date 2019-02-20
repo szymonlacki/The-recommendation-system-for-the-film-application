@@ -1,0 +1,43 @@
+.text-ellipsis {
+    text-overflow: ellipsis;
+}
+
+mat-card-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 325px;
+    margin:0px auto;
+    margin-top: 10px;
+    position: relative;
+    top:0;
+    left: 0;
+}
+
+
+
+mat-card{
+    
+    display: flex;
+   flex-wrap: wrap;
+   background-color: #746969;
+    height: 100%;
+  
+}
+
+.row.is-flex {
+
+    margin:5px;
+}
+
+
+.demo-tab-content{
+   
+    float: left;
+}
+
+body{
+    background-color: #424242;
+}
+

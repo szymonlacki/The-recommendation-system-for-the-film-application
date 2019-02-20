@@ -1,0 +1,45 @@
+
+
+<html lang="en">
+
+
+<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
+
+<body >
+    <div class="row vertical-offset-100">
+    	<div class="col-md-4 col-md-offset-4">
+				<mat-card>
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Zaloguj się</h3>
+			 	</div>
+
+			        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="background-color: #424242;">
+                    <fieldset style="background-color: #424242;">
+						<mat-form-field style="width: 100%">
+							<input matInput formControlName="login"  [(ngModel)]="user.login" name="login" placeholder="Login" type="text" >
+						  </mat-form-field>
+						  <mat-form-field style="width: 100%">
+							<input matInput  formControlName="password" [(ngModel)]="user.password" name="password" placeholder="Hasło" type="password">
+						  </mat-form-field>
+			    		<div class="checkbox">
+
+			    	    </div>
+			    		<input class="btn btn-lg btn-danger btn-block" type="submit" value="Zaloguj"  >
+					</fieldset>
+					<div *ngIf="errorMessages.length > 0" label="Error!" icon="error" style="color: red">{{errorMessages}}</div>
+						<br>
+                    <span>Nie masz jeszcze konta w serwisie Netflix?</span>
+					<a style="color: blue;cursor: pointer;"><p [routerLink]="['/registration']">Zarejestruj się</p></a>
+
+					  </form>
+					</mat-card>
+
+		</div>
+	</div>
+
+
+
+</body>
+</html>
+
+

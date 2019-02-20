@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<app-page-not-found *ngIf="!movie.movieId">
+</app-page-not-found>
+<div class="movie-bg">
+    <div class="shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img style="height:400px; width: 500" class="movie-photo" src="assets/images/{{movie.movieTitle}}.jpg" alt=""
+                        class="thumbnail">
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-7 col-lg-8">
+                            <div class="col-md-12 movie-title-box">
+                                <h2 class="movieTitle">{{movie.movieTitle}}</h2>
+                                <h3 class="movieYear">({{movie.movieYear}})</h3>
+                            </div>
+
+                            <div class="col-md-12 genres-box">
+                                <div class="genres-title">Gatunek:</div>
+                                <div class="genres" *ngFor="let genre of movieGenre" style="width:2000px;">
+                                    <div class="genres-type" routerLink="/movies/genre/{{genre.genreId}}">{{genre.genreTitle}}</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <i class="material-icons material-icons-rate" matTooltip="Ocena uzytkowników">
+                                    star
+                                </i>
+                                <h4 class="users-rate">{{average|number:'1.0-1'}}</h4>
+
+                                <span >
+                                    <!-- <i class="material-icons material-icons-favorite" matTooltip="Dodaj do ulubionych" *ngIf="this.authService.isUserLoggedIn && this.sizeOfFavorite==0"
+                                        (click)="insertFavoriteList()">
+                                        favorite
+                                    </i> -->
+                                    <span *ngIf="this.authService.isUserLoggedIn && !addedToFavoriteMovies?.length>0">
+                                        <i class="material-icons material-icons-favorite" matTooltip="Dodaj do ulubionych" *ngFor="let favoriteList of favoriteLists"
+                                            (click)="addToCurrentFavoriteList(favoriteList.favoriteListId, this.id)">
+                                            favorite
+                                        </i>
+                                    </span>
+
+
+                                    <i class="material-icons material-icons-favorite" matTooltip="Zaloguj się aby dodać ten film do ulubionych" *ngIf="!this.authService.isUserLoggedIn"
+                                        [routerLink]="['/login']" (click)="this.movieService.sendMovieId(this.id)">
+                                        favorite
+                                    </i>
+                                </span>
+                                <i class="material-icons material-icons-favorite" matTooltip="Napisz recenzję" *ngIf="this.authService.isUserLoggedIn" (click)="openDialogReview()">
+                                    text_rotate_vertical
+
+                                </i>
+                                <i class="material-icons material-icons-favorite" matTooltip="Zaloguj się aby napisać recenzję" *ngIf="!this.authService.isUserLoggedIn"
+                                    [routerLink]="['/login']" (click)="this.movieService.sendMovieId(this.id)">
+                                    text_rotate_vertical
+                                </i>
+
+                                <button mat-button [matMenuTriggerFor]="animals">
+                                    <i class="material-icons material-icons-list" matTooltip="Zaloguj się aby dodać do playlisty" *ngIf="!this.authService.isUserLoggedIn"
+                                        [routerLink]="['/login']" (click)="this.movieService.sendMovieId(this.id)">
+                                        list
+                                    </i>
+                                    <i class="material-icons material-icons-list" matTooltip="Dodaj do listy" *ngIf="this.authService.isUserLoggedIn">
+                                        list
+                                    </i>
+
+                                </button>
+                                <div  *ngIf="errorMessages.length > 0" label="Error!" icon="error" style="color: red; font-size: 18px">{{errorMessages}}</div>
+
+
+                                <mat-menu #animals="matMenu">
+                                    <button mat-menu-item (click)="openDialogList()">Stwórz nową listę</button>
+                                    <button mat-menu-item [matMenuTriggerFor]="existinglist">Dodaj do:</button>
+                                </mat-menu>
+
+                                <mat-menu #existinglist="matMenu">
+                                    <button mat-menu-item *ngFor="let movieList of movieLists" (click)="addMovieToCurrentList(movieList.movie_List_Id,this.id)">
+                                        {{movieList.name}}</button>
+                                </mat-menu>
+
+                                <!--    <i class="material-icons material-icons-buy" matTooltip="Kup film">
+                                    shopping_basket
+                                </i>
+                            -->
+
+
+
+                                <button mat-button [matMenuTriggerFor]="stars" >
+                                    <i class="material-icons material-icons-list" matTooltip="Zaloguj się aby ocenić" *ngIf="!this.authService.isUserLoggedIn"
+                                        [routerLink]="['/login']" (click)="this.movieService.sendMovieId(this.id)">
+                                        star
+                                    </i>
+                                    <i class="material-icons material-icons-list" matTooltip="Oceń film" *ngIf="this.authService.isUserLoggedIn && !ratedMovies?.length>0">
+                                        star
+                                    </i>
+
+
+                                </button>
+
+
+                                <mat-menu #stars="matMenu">
+
+                                    <fieldset class="rating">
+
+                                        <fieldset class="rating">
+                                            <rating [(ngModel)]="rate.rateValue" [float]="true" (click)="addRate()" [max]="10">
+                                            </rating>
+                                        </fieldset>
+                                    </fieldset>
+
+                                </mat-menu>
+
+                            </div>
+
+                        </div>
+
+                        <!-- <div class="col-sm-12 col-md-5 col-lg-4 movie-rate" > -->
+
+                    </div>
+
+
+                    <div class="col-sm-12">
+                        <h2 class="movie-description" style="color:white">Opis</h2>
+                    </div>
+                    <div class="col-sm-12">
+                        <h4 class="movie-description-text">{{movie.movieDescription}}</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container" style="margin-top:50px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 actor-details" *ngFor="let actor of movieActor" style="margin:10px">
+                <div class="col-md-12 actor-details-img" style="cursor: pointer;" routerLink="/actors/{{actor.actorId}}">
+                    <img src="assets/images/actors/{{actor.imageName}}" alt="" style="width:200px; margin-top: 0;">
+                </div>
+                <div class="col-md-12 actor-date-text" style="width:200px;height: 80px; display: flex;justify-content: center;text-align: center">{{actor.actorName}}</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top:50px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="col-md-2">
+
+                </div>
+
+            </div>
+            <div class="col-md-12 review-details" *ngFor="let review of movieReview">
+
+                <button matTooltip="Kliknij, aby zobaczyć dane autora" (click)="getAccountByReviewID(review.reviewId)" class="col-md-1 review-details-img"
+                    mat-button [matMenuTriggerFor]="userName">
+
+                    <img   src="https://www.sigbl.com/mytemplate/themes/creative_v5/images/dna/testi-human.svg" style="width:30px; cursor: pointer; margin-top: 10px;">
+
+                    <mat-menu #userName="matMenu">
+
+                        <h3 style="text-align:center; color:white; padding: 5px; ">{{accountReview}}</h3>
+                    </mat-menu>
+                </button>
+
+                <div class="col-md-11">
+                    <div class="col-md-12 review-header"></div>
+                    <div class="col-md-12 review-text" innerHTML="{{review.reviewDescription}}"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</html>

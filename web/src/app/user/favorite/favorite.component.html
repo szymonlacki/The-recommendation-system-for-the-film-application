@@ -1,0 +1,59 @@
+<app-profile-menu></app-profile-menu>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+
+
+
+
+
+  <div class="container" *ngIf = "this.moviesOfFavoriteLists.length; else noFavourite">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="movieTitle" style="cursor:pointer">Moje ulubione filmy</h2>
+      </div>
+    </div>
+  </div>
+
+<span >
+  <span  *ngFor="let moviesOfFavoriteList of moviesOfFavoriteLists">
+  <div  class="container movie-container"   >
+    <div class="row">
+      <div class="col-md-2 favorite-img" >
+        <img src="assets/images/{{moviesOfFavoriteList.movieTitle}}.jpg" routerLink="/movies/{{moviesOfFavoriteList.movieId}}">
+      </div>
+
+      <div class="col-md-8">
+        <div class="row">
+
+          <div class="col-md-12">
+            <h2 class="movieTitle">{{moviesOfFavoriteList.movieTitle}}</h2>
+            <h3 class="movieYear">({{moviesOfFavoriteList.movieYear}})</h3>
+            <i class="material-icons material-icons-favorite" matTooltip="Usuń z ulubionych" (click)="deleteMovieFromFavoriteList(moviesOfFavoriteList.movieId)">
+                favorite
+              </i>
+          </div>
+          <div class="col-md-12">
+            <p class="description-text">
+              {{moviesOfFavoriteList.movieDescription}}
+            </p>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</span>
+</span>
+
+
+</body>
+<ng-template #noFavourite style = "margin: 10px auto;" >
+  <h2 class="movieTitle" style="color:red;">Nie posiadasz jeszcze ulubionych filow</h2>
+
+</ng-template>

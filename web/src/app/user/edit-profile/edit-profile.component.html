@@ -1,0 +1,136 @@
+<app-profile-menu></app-profile-menu>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+
+
+<mat-card>
+  <div class="row">
+      <form (ngSubmit)="onSubmit()">
+         <!--imie i nazwisko-->
+      <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-offset-1 col-md-2 edit-profile-header">
+              <span>Imie i nazwisko:</span>
+            </div>
+            <div class="col-md-9 edit-profile-content">
+        <mat-form-field appearance="outline" >
+          <input matInput [(ngModel)]="user.name"  placeholder="imię i nazwisko"   [formControl]="nameControl" required>
+          <mat-error *ngIf="nameControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+   <!--email-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-profile-header">
+          <span>Email:</span>
+        </div>
+        <div class="col-md-9 edit-profile-content">
+        <mat-form-field appearance="outline">
+          <input matInput [formControl]="emailControl" [(ngModel)]="user.email" name="email" placeholder="Email" type="email" id="email" >
+          <mat-error *ngIf="emailControl.hasError('email')">Nieprawidłowy adres email</mat-error>
+          <mat-error *ngIf="emailControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+    <!--login-->
+    <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 edit-profile-header">
+            <span>Login:</span>
+          </div>
+          <div class="col-md-9 edit-profile-content">
+              <mat-form-field appearance="outline">
+          <input matInput [formControl]="loginControl" [(ngModel)]="user.account.login" name="login" placeholder="Login" type="text">
+          <mat-error *ngIf="loginControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+          <mat-error *ngIf="loginControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+   <!--wiek-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-profile-header">
+          <span>Wiek:</span>
+        </div>
+        <div class="col-md-9 edit-profile-content">
+            <mat-form-field appearance="outline">
+          <input matInput [formControl]="ageControl" [(ngModel)]="user.age" name="age" placeholder="Wiek" type="age">
+          <mat-error *ngIf="ageControl.hasError('pattern')">Proszę podać liczbę</mat-error>
+          <mat-error *ngIf="ageControl.hasError('required')">To pole jest wymagane</mat-error>
+          <mat-error *ngIf="ageControl.hasError('min')">Proszę podać liczbę nieujemną</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+   <!--Obecne hasło-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-profile-header">
+          <span>Obecne Hasło:</span>
+        </div>
+        <div class="col-md-9 edit-profile-content">
+            <mat-form-field appearance="outline">
+          <input matInput [formControl]="passwordControl" [(ngModel)]="user.account.currentPassword" [type]="hide ? 'password' : 'text'" name="currentPassword" placeholder="Obecne hasło"
+                 type="password">
+                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                 <mat-error *ngIf="repeatpasswordControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+                 <mat-error *ngIf="repeatpasswordControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+       <!--Nowe hasło-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-profile-header">
+          <span>Hasło:</span>
+        </div>
+        <div class="col-md-9 edit-profile-content">
+            <mat-form-field appearance="outline">
+          <input [type]="hide ? 'password' : 'text'" matInput [formControl]="passwordControl" [(ngModel)]="user.account.password" name="password" placeholder="Hasło" type="password">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="repeatpasswordControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+          <mat-error *ngIf="repeatpasswordControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+
+       <!--Powtórzone nowe hasło-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-profile-header">
+          <span>Hasło:</span>
+        </div>
+        <div class="col-md-9 edit-profile-content">
+            <mat-form-field appearance="outline">
+          <input [type]="hide ? 'password' : 'text'" matInput [formControl]="passwordControl" [(ngModel)]="repeatPassword" name="repeatPassword" placeholder="Powtórz hasło" type="password">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="repeatpasswordControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+          <mat-error *ngIf="repeatpasswordControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button  class="add-movie-button col-md-offset-3 col-md-2" (click)="editUserAccount()"
+  [disabled]="!nameControl.valid || !emailControl.valid || !loginControl.valid ||
+          !passwordControl.valid  || !ageControl.valid" >Edytuj</button>
+      </form>
+      <br>
+      <div *ngIf="errorMessages.length > 0" label="Error!" icon="error" style="color: red">{{errorMessages}}</div>
+
+</div>
+</mat-card>
+</body>

@@ -1,0 +1,226 @@
+<body>
+
+ <mat-card>
+    <!-- <div class="add-movie-container">-->
+    <div class="row">
+      <div class="add-movie-header col-lg-offset-1 col-lg-11">
+        <h3>Dodaj film</h3>
+      </div>
+      <!--Tytuł -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Tytuł:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <input matInput [(ngModel)]="model.movieDTO.movieTitle">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <!--Czas trwania -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Czas trwania:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <input matInput type="number" min="1" placeholder="min" [(ngModel)]="model.movieDTO.movieDuration">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Rok produkcji: -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Rok produkcji:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <mat-select placeholder="Rok" [(ngModel)]="model.movieDTO.movieYear">
+                  <mat-option value="2018">2018</mat-option>
+                  <mat-option value="2017">2017</mat-option>
+                  <mat-option value="2016">2016</mat-option>
+                  <mat-option value="2015">2015</mat-option>
+                  <mat-option value="2014">2014</mat-option>
+                  <mat-option value="2013">2013</mat-option>
+                  <mat-option value="2012">2012</mat-option>
+                  <mat-option value="2011">2011</mat-option>
+                  <mat-option value="2010">2010</mat-option>
+                  <mat-option value="2009">2009</mat-option>
+                  <mat-option value="2008">2008</mat-option>
+                  <mat-option value="2007">2007</mat-option>
+                  <mat-option value="2006">2006</mat-option>
+                  <mat-option value="2005">2005</mat-option>
+                  <mat-option value="2004">2004</mat-option>
+                  <mat-option value="2003">2003</mat-option>
+                  <mat-option value="2002">2002</mat-option>
+                  <mat-option value="2001">2001</mat-option>
+                  <mat-option value="2000">2000</mat-option>
+                  <mat-option value="1999">1999</mat-option>
+                  <mat-option value="1998">1998</mat-option>
+                  <mat-option value="1997">1997</mat-option>
+                  <mat-option value="1996">1996</mat-option>
+                  <mat-option value="1995">1995</mat-option>
+                  <mat-option value="1994">1994</mat-option>
+                  <mat-option value="1993">1993</mat-option>
+                  <mat-option value="1992">1992</mat-option>
+                  <mat-option value="1991">1991</mat-option>
+                  <mat-option value="1990">1990</mat-option>
+                  <mat-option value="1989">1989</mat-option>
+                  <mat-option value="1988">1988</mat-option>
+                  <mat-option value="1987">1987</mat-option>
+                  <mat-option value="1986">1986</mat-option>
+                  <mat-option value="1985">1985</mat-option>
+                  <mat-option value="1984">1984</mat-option>
+                  <mat-option value="1983">1983</mat-option>
+                  <mat-option value="1982">1982</mat-option>
+                  <mat-option value="1981">1981</mat-option>
+                  <mat-option value="1980">1980</mat-option>
+                  <mat-option value="1979">1979</mat-option>
+                  <mat-option value="1978">1978</mat-option>
+                  <mat-option value="1977">1977</mat-option>
+                  <mat-option value="1976">1976</mat-option>
+                  <mat-option value="1975">1975</mat-option>
+                  <mat-option value="1974">1974</mat-option>
+                  <mat-option value="1973">1973</mat-option>
+                  <mat-option value="1972">1972</mat-option>
+                  <mat-option value="1971">1971</mat-option>
+                  <mat-option value="1970">1970</mat-option>
+              </mat-select>
+          </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Premiera: -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Premiera:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <input matInput type="date" [(ngModel)]="model.movieDTO.movieReleaseDate">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Kraj produkcji -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Kraj produkcji:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <input matInput [(ngModel)]="model.movieDTO.movieReleaseCountry">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Garunek -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Garunek:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <mat-select placeholder="Gatunki" multiple [(ngModel)]="model.genreList">
+                <mat-option *ngFor="let genre of genreRes" [value]="genre.genreTitle">
+                  {{genre.genreTitle}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Aktorzy -->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Aktorzy:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <mat-select placeholder="Aktorzy" multiple [(ngModel)]="model.actors" style="width: 250px;">
+                <mat-option *ngFor="let actor of actorRes"  [value]="actor.actorName" >
+                {{actor.actorName}}
+                  <!-- <div class="image" style="margin-top:50px; ">
+                      <h5 style="font-weight: bold">{{actor.actorName}}</h5>
+                  <img  src="assets/images/{{actor.image}}" style="height:300px;width: 200px;">
+                  </div> -->
+                </mat-option>
+
+
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Język mówiony-->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Język mówiony:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <input matInput >
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Opis-->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Opis:</span>
+          </div>
+          <div class="col-md-9 add-movie-content">
+            <mat-form-field>
+              <textarea matInput [(ngModel)]="model.movieDTO.movieDescription"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--Ścieżka zdjęcia-->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-movie-text">
+            <span>Ścieżka zdjęcia:</span>
+          </div>
+
+          <!--zdjęcie-->
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-offset-1 col-md-2 add-actor-text">
+                <span>Zdjęcie:</span>
+              </div>
+              <div class="col-md-9 add-actor-content">
+               <div class="add-field add-img">
+      <input type="file" (change)="readImage($event)">
+    </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <button mat-raised-button  (click)="addMovie()">Dodaj</button>
+
+
+        </div>
+
+      </div>
+
+    </div>
+    <div  *ngIf="errorMessages.length > 0" label="Error!" icon="error" style="color: red">{{errorMessages}}</div>
+  </mat-card>
+
+</body>

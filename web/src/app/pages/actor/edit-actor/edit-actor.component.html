@@ -1,0 +1,120 @@
+<body>
+
+  <div class="container edit-actor-container">
+    <div class="row">
+      <h4 class="col-md-12 pages-header">Edytuj aktora</h4>
+
+      <!--imie i nazwisko-->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 edit-actor-header">
+            <span>Imie i nazwisko:</span>
+          </div>
+          <div class="col-md-9 edit-actor-content">
+            <mat-form-field appearance="outline">
+              <mat-label>Hanka</mat-label>
+              <input matInput placeholder="imię i nazwisko">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+ <!--data urodzenia-->
+ <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-2 edit-actor-header">
+        <span>Data urodzenia:</span>
+      </div>
+      <div class="col-md-9 edit-actor-content">
+        <mat-form-field appearance="outline">
+          <mat-label>10.10.1990</mat-label>
+          <input matInput placeholder="10.10.1990">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+      <!--płeć-->
+      <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-offset-1 col-md-2 edit-actor-header">
+              <span>Płeć:</span>
+            </div>
+            <div class="col-md-9 edit-actor-content">
+              <mat-form-field appearance="outline">
+                <mat-label>Kobieta</mat-label>
+                <input matInput placeholder="płeć">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+  <!--miejsce urodzenia-->
+ <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-2 edit-actor-header">
+        <span>Miejsce urodznia:</span>
+      </div>
+      <div class="col-md-9 edit-actor-content">
+        <mat-form-field appearance="outline">
+          <mat-label>Krakow</mat-label>
+          <input matInput placeholder="Miejsce urodznia">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  
+ 
+  <!--biografia-->
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-actor-header">
+          <span>Biografia:</span>
+        </div>
+        <div class="col-md-9 edit-actor-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Biografia</mat-label>
+            <input matInput placeholder="Biografia">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+  <!--filmy zrobić liste do wybierania wielu filmów--> 
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 edit-actor-header">
+          <span>Filmy:</span>
+        </div>
+        <div class="col-md-9 edit-actor-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Filmy</mat-label>
+            <input matInput placeholder="Filmy">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+      <!--zdjęcie-->
+      <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-offset-1 col-md-2 edit-actor-header">
+              <span>Zdjęcie:</span>
+            </div>
+            <div class="col-md-9 edit-actor-content">
+                <div class="add-field add-img ">
+                    <input type="file" (change)="readImage($event)">
+                  </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      <button mat-raised-button color="accent" class="add-movie-button col-md-offset-3 col-md-2">Edytuj</button>
+    </div>
+  </div>
+
+  
+</body>

@@ -1,0 +1,330 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+body{
+    background-color: rgba(243, 243, 243, 0.97);
+    font-family: "Lato", sans-serif !important;
+   }
+
+img {
+    margin-top: 50px;
+    width: 85%;
+}
+
+.m-r-md {
+    margin-right: 5px;
+}
+
+/*.movie{
+    height: 550px;
+}
+*/
+
+.btn-block{
+    width: 85%;
+}
+
+
+
+
+
+.movie-bg{
+    width: 100%;
+    /*height: 550px;*/
+    background-repeat: no-repeat;
+    background-position: center;
+
+    overflow: hidden;
+    background-size: cover;
+    background-image: url("/assets/images/movie-details-bg.jpg");
+}
+.shadow{
+    background-color: rgba(0, 0, 0, 0.70);
+    overflow: hidden;
+
+}
+
+.movie-title-box{
+    height: 100px;
+}
+
+.movieTitle{
+    color: white;
+    opacity: 1.0;
+    float: left;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 50px;
+    font-family: "Lato", sans-serif;
+}
+
+.movieYear{
+    color: darkgray;
+    opacity: 1.0;
+    font-size: 28px;
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    margin-top: 50px;
+    font-family: "Lato", sans-serif;
+}
+
+.genres-title{
+    color: darkgray;
+    opacity: 1.0;
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Lato", sans-serif;
+}
+
+.genres-type{
+    color:white;
+    font-style: italic;
+    cursor: pointer;
+    text-align: left;
+    float: left;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+}
+
+.material-icons{
+    float: left;
+    color: white;
+    opacity: 1.0;
+    margin: 7px;
+    padding: 5px;
+}
+
+.material-icons-rate{
+    font-size: 40px !important;
+    color: yellow;
+    padding-right: 10px;
+}
+
+.material-icons-rate:hover{
+    cursor: pointer;
+}
+
+.material-icons-favorite, .material-icons-buy, .material-icons-list{
+    font-size: 30px !important;
+    border: 2px solid white;
+    border-radius: 35px;
+}
+
+.material-icons-favorite:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.material-icons-list:hover, .material-icons-buy:hover{
+    cursor: pointer;
+    color: black;
+    background-color:white;
+}
+
+.material-icons-stars{
+    font-size: 45px !important;
+    padding: 0;
+}
+.material-icons-stars:hover{
+    cursor: pointer;
+    color: yellow;
+}
+
+.users-rate{
+    height: 40px !important;
+    opacity: 1.0;
+    color: white;
+    font-size: 30px;
+    float: left;
+    padding-right: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.description{
+    color: white;
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+}
+
+.description-text{
+    color: white;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+}
+
+
+mat-slider {
+    background-color: white;
+    width: 300px;
+  }
+
+
+
+.movie-rate{
+    float: left;
+    background-color:black;
+    height: 100px;
+    box-shadow: 5px 2px 10px 4px #888888;
+    margin-top: 50px;
+}
+.movie-rate-header{
+    color: white;
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-family: "Lato", sans-serif;
+}
+
+  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; background-color: rgba(243, 243, 243, 0.97); }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  float: left;
+
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 2.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+ float: right;
+ cursor: pointer;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+
+
+.movie-description{
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+}
+.movie-description-text{
+    color: white;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: justify;
+    margin-bottom: 30px;
+    font-family: "Lato", sans-serif;
+}
+
+.actor-details{
+    min-width:200px;
+    max-width: 200px;
+    padding: 0;
+    box-shadow: 5px 2px 10px 4px #888888;
+    background-color: #ffffffec;
+    margin-right: 20px;
+    font-family: "Lato", sans-serif;
+}
+
+.actor-details-img{
+    padding: 0;
+    min-width:200px;
+    max-width: 200px;
+}
+
+.actor-date{
+    color: darkgrey;
+    font-size: 14px;
+    margin-top: 20px;
+    height: 20px;
+}
+
+.actor-date-text{
+    color: black;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 36px;
+    font-family: "Lato", sans-serif;
+    width:200px !important;
+}
+
+.description-header{
+    margin-top: 30px;
+    color: black;
+    font-size: 24px;
+    width: 200px;
+    margin-right: 0;
+}
+
+.review-details{
+    box-shadow: 5px 2px 10px 4px #888888;
+    background-color: #ffffffec;
+    margin-bottom: 20px;
+}
+
+.review-details-img{
+    border: 2px solid black;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.review-header{
+    color: black;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+
+
+}
+
+
+.review-text{
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.material-icons-add_circle_outline{
+    color: black;
+    float: left;
+    height: 66px;
+    padding-top: 20px;
+}
+
+.mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button{
+    padding: 0;
+    min-width: 50px;
+}

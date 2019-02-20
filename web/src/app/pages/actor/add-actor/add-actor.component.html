@@ -1,0 +1,117 @@
+<body>
+
+<mat-card>   <!-- <div class="add-movie-container">-->
+    <div class="row">
+        <div class="add-movie-header col-lg-offset-1 col-lg-11">
+          <h3>Dodaj Aktora</h3>
+        </div>
+
+
+        <!--imie i nazwisko-->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-offset-1 col-md-2 add-actor-text">
+              <span>Imie i nazwisko:</span>
+            </div>
+            <div class="col-md-9 add-actor-content">
+              <mat-form-field>
+                <input matInput  [(ngModel)]="actor.actorName">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+  
+   <!--data urodzenia-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 add-actor-text">
+          <span>Data urodzenia:</span>
+        </div>
+        <div class="col-md-9 add-actor-content">
+          <mat-form-field >
+            <input matInput type="date"   [(ngModel)]="actor.actorBirthday">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  
+        <!--płeć-->
+        <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-offset-1 col-md-2 add-actor-text">
+                <span>Płeć:</span>
+              </div>
+              <div class="col-md-9 add-actor-content">
+                <mat-form-field >
+                  <input matInput [(ngModel)]="actor.actorGender">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+    <!--miejsce urodzenia-->
+   <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 add-actor-text">
+          <span>Miejsce urodznia:</span>
+        </div>
+        <div class="col-md-9 add-actor-content">
+          <mat-form-field>
+            <input matInput   [(ngModel)]="actor.actorPlaceOfBirth">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    
+   
+    <!--biografia-->
+    <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-2 add-actor-text">
+            <span>Biografia:</span>
+          </div>
+          <div class="col-md-9 add-actor-content">
+            <mat-form-field >
+              <textarea matInput [(ngModel)]="actor.actor_biography"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+   
+  
+        <!--zdjęcie-->
+        <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-offset-1 col-md-2 add-actor-text">
+                <span>Zdjęcie:</span>
+              </div>
+              <div class="col-md-9 add-actor-content">
+               <div class="add-field add-img">
+      <input type="file" (change)="readImage($event)">
+    </div>
+              </div>
+            </div>
+          </div>
+
+
+<!-- 
+        <div class="add-field add-img col-lg-offset-1 col-lg-11">
+          <input type="file" (change)="readImage($event)">
+        </div> -->
+        <button mat-raised-button  (click)="addActor()">Dodaj</button>
+        <div  *ngIf="errorMessages.length > 0" label="Error!" icon="error" style="color: red">{{errorMessages}}</div> 
+
+       
+
+
+      </div>
+
+    </mat-card>
+ <!-- </div>-->
+
+
+</body>
+

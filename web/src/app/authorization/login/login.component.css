@@ -1,0 +1,21 @@
+
+body{
+    background-image: url("https://s3.eu-central-1.amazonaws.com/assets.theinsiter.org/images/cropped/cinema-2-1455229150.jpeg");
+    background-repeat: no-repeat;
+   
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+    font-family: 'Merriweather', serif;
+}
+
+a{
+    font-weight: bold;
+}
+
+mat-card{
+    border-radius: 5px;
+    opacity: 0.9;
+
+}

@@ -1,0 +1,48 @@
+<!--
+
+<img class="card-img-top " src="https://image.tmdb.org/t/p/w300/{{actor.poster_path}}" *ngIf="actor.poster_path" alt="Responsive image">
+<img class="card-img-top" src="assets/img/abstract-image.jpg" *ngIf="!actor.poster_path" alt="Responsive image">
+-->
+<div class="card" routerLink="/actors/{{actor.actorId}}">
+
+  <img class="card-img-top img-fluid " src="assets/images/actors/{{actor.actorName}}.jpg" alt={{actor.image}}>
+
+  <div class="card-img-overlay">
+    <h5>{{actor.actorName}}</h5>
+
+  </div>
+</div>
+<!-- <button mat-raised-button  matTooltip="Opcje admina" (click)="openBottomSheet()" *ngIf="this.authService.isUserLoggedIn && user.account.accessRight=='Admin'" >
+ </button> -->
+
+  <button mat-raised-button  matTooltip="Opcje admina" *ngIf="this.authService.isUserLoggedIn && user.account.accessRight=='Admin'" [matMenuTriggerFor]="animals"> <i class="material-icons">
+    list
+  </i>CRUD</button>
+  <mat-menu #animals="matMenu">
+    <span mat-line routerLink="/actor/add"><i class="material-icons">
+      add
+      </i>Dodaj aktora
+    
+    </span>
+    <a mat-list-item (click)="deleteActor(actor.actorId)" >
+      <span mat-line >  <i class="material-icons" >
+        delete
+        </i>Usuń</span>
+  
+    </a>
+    <span mat-line routerLink="/actor/edit"><i class="material-icons">
+      edit
+      </i>Edytuj</span>
+  </mat-menu>
+<!--
+  <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
+
+  <p><strong>Release Date: </strong>{{movie.release_date}}</p>
+  <p>
+      <a routerLink="/movie/{{movie.id}}">View details &raquo;</a>
+      <small class="label label-success pull-right" *ngIf="movie.vote_average">
+          {{movie.vote_average}}
+          <i class="glyphicon glyphicon-star"></i>
+        </small>
+  </p>
+-->

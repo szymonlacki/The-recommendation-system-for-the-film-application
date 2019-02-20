@@ -1,0 +1,20 @@
+<mat-form-field>
+        <input matInput placeholder="Nazwa listy"  required [(ngModel)]="movieList.name">
+      </mat-form-field>
+      <mat-form-field>
+          <textarea matInput placeholder="Opis"  required [(ngModel)]="movieList.description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+              <mat-select placeholder="Filmy" multiple [(ngModel)]="movieList.movies">
+                      <mat-option *ngFor="let movie of listMovies" [value]="movie">
+                        {{movie.movieTitle}}
+                      </mat-option>
+                    </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="accent" (click)="addMovieList()">Dodaj Liste</button>
+
+
+
+
+
+

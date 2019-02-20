@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+    <div class="movie-bg">
+        <div class="shadow">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="actor-photo" src="assets/images/actors/{{actor.image}}"
+                            alt="" class="thumbnail">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <h2 class=" col-md-12 actor-name">{{actor.actorName}}</h2>
+                            <!-- JAK ODKOMENTUJE SIĘ actor-rate TRZZEBA ZMIENIC actor-name NA  Col-md-6 actor-name   -->
+                            <!-- <div class="col-md-6 actor-rate">
+                                <i class="material-icons material-icons-rate" matTooltip="Ocena uzytkowników">
+                                    star
+                                </i>
+                                <h4 class="users-rate">9.5</h4>
+
+                                <i class="material-icons material-icons-stars" matTooltip="Oceń film">
+                                    stars
+                                </i>
+                            </div> -->
+
+                            <div class="col-md-3 actor-date">Data urodzenia:</div>
+                            <div class="col-md-9 actor-date-text">{{actor.actorBirthday}}</div>
+                            <div class="col-md-3 actor-date">Miejsce urodzenia:</div>
+                            <div class="col-md-9 actor-date-text">{{actor.actorPlaceOfBirth}}</div>
+                            <div class="col-md-3 actor-date">Płeć:</div>
+                            <div class="col-md-9 actor-date-text">{{actor.actorGender}}</div>
+                            <div class="col-md-3 actor-date">Biografia:</div>
+                            <div class="col-md-9 actor-date-text">{{actor.actor_biography}}</div>
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" >
+                <h3 class="description-header">Filmy</h3>
+                <div class="col-md-3 actor-details" *ngFor = "let movie of actorMovie">
+                    <div class="col-md-12 actor-details-img" style="cursor: pointer;" routerLink="/movies/{{movie.movieId}}">
+                        <img src="assets/images/{{movie.movieTitle}}.jpg" alt="" style="width:200px; margin-top: 0;">
+                    </div>
+                    <div class="col-md-12 actor-details-text" style="height: 80px;">{{movie.movieTitle}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>

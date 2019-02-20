@@ -1,0 +1,52 @@
+<body>
+<div class="registration-box">
+  <mat-card>
+    <mat-card-title>
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Rejestracja</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </mat-card-title>
+    <mat-card-content>
+      <form  (ngSubmit)="onSubmit()">
+        <mat-form-field style="width: 100%" >
+          <input matInput   [(ngModel)]="user.name" name="name" placeholder="Imię" type="text"  [formControl]="nameControl" required>
+          <mat-error *ngIf="nameControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%">
+          <input matInput [formControl]="emailControl" [(ngModel)]="user.email" name="email" placeholder="Email" type="email" id="email" >
+          <mat-error *ngIf="emailControl.hasError('email')">Nieprawidłowy adres email</mat-error>
+          <mat-error *ngIf="emailControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field> 
+       <mat-form-field style="width: 100%">
+          <input matInput [formControl]="loginControl" [(ngModel)]="user.account.login" name="login" placeholder="Login" type="text">
+          <mat-error *ngIf="loginControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+          <mat-error *ngIf="loginControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%">
+          <input matInput [formControl]="passwordControl" [(ngModel)]="user.account.password" name="password" placeholder="Hasło" type="password">
+          <mat-error *ngIf="passwordControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+          <mat-error *ngIf="passwordControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%">
+          <input matInput [formControl]="repeatpasswordControl" [(ngModel)]="password" name="repeatPassword" placeholder="Powtórz hasło" type="password">
+          <mat-error *ngIf="repeatpasswordControl.hasError('minlength')">Wymagane co najmniej 5 znaków</mat-error>
+          <mat-error *ngIf="repeatpasswordControl.hasError('required')">To pole jest wymagane</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%"> 
+          <input matInput [formControl]="ageControl" [(ngModel)]="user.age" name="age" placeholder="Wiek" type="age"> 
+          <mat-error *ngIf="ageControl.hasError('pattern')">Proszę podać liczbę</mat-error>
+          <mat-error *ngIf="ageControl.hasError('required')">To pole jest wymagane</mat-error>
+          <mat-error *ngIf="ageControl.hasError('min')">Proszę podać liczbę nieujemną</mat-error>
+        </mat-form-field>  
+        <button mat-raised-button type="submit" [disabled]="!nameControl.valid || !emailControl.valid || !loginControl.valid ||
+        !passwordControl.valid || !repeatpasswordControl.valid || !ageControl.valid" >Zarejestruj się</button> 
+      </form>
+       <br> 
+      <div *ngIf="errorMessages.length > 0" label="Error!" icon="error" style="color: red">{{errorMessages}}</div> 
+    </mat-card-content>
+  </mat-card>
+</div>
+</body>
+

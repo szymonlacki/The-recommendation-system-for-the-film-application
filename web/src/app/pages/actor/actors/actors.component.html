@@ -1,0 +1,20 @@
+<body>
+
+
+
+
+
+
+
+<div class="demo-tab-content" *ngFor = "let actor of actors">
+
+        <app-actor-card [actor]="actor"></app-actor-card>
+
+
+
+</div>
+
+
+<button mat-fab color="warn" style="width:130px; height: 70px;" (click)="goPage(1)" >Pokaż więcej</button>
+
+</body>

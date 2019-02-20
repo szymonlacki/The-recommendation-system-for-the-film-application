@@ -1,0 +1,16 @@
+<body>
+    <h3 style="text-align:center; color: white">Filmy z gatunku <span style="color:red; font-size: 27px;">{{genre.genreTitle}}</span></h3>
+
+  <mat-card>
+     
+         
+            <div class="demo-tab-content" *ngFor="let movie of genreMovie; let i = index;">
+              <app-movie-card [movie]="movie"></app-movie-card>
+            </div>
+       
+         
+     
+     
+    </mat-card>
+    
+    </body>

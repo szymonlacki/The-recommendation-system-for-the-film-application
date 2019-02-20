@@ -1,0 +1,52 @@
+<app-profile-menu></app-profile-menu>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+
+
+
+
+
+
+  <div class="container" *ngIf = "this.accountReviews?.length; else noReview">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <h3 class="description-header">Moje recenzje:</h3>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 review-details" *ngFor="let accountReview of accountReviews">
+                <div class="col-md-1 review-details-img">
+                    <button matTooltip="Kliknij, aby zobaczyć tytuł filmu" (click)="getMovieByReviewId(accountReview.reviewId)" class="col-md-1 review-details-img"
+                    mat-button [matMenuTriggerFor]="movieName">
+                    <img src="https://cdn.hipwallpaper.com/i/74/55/zcuRXw.jpg" alt="" style="width:80px; height: 80px; margin-left: -10px; border-radius: 20px">
+                    <mat-menu #movieName="matMenu">
+
+                        <h3 style="text-align:center; color:white; padding: 5px; ">{{movieReview}}</h3>
+                    </mat-menu>
+                </button>
+                  </div>
+                <div class="col-md-11">
+                    <div class="col-md-12 review-header"></div>
+                    <div class="col-md-12 review-text" innerHTML="{{accountReview.reviewDescription}}"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<ng-template #noReview style = "margin: 10px auto;" >
+  <h2 class="movieTitle" style="color:red;">Nie posiadasz jeszcze recenzji</h2>
+
+</ng-template>

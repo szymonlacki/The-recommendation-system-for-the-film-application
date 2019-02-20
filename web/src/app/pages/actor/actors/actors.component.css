@@ -1,0 +1,49 @@
+.text-ellipsis {
+    text-overflow: ellipsis;
+}
+
+body{
+  background-color: #746969;
+  /* background-image:url("C:/Users/Bogusia/Desktop/photo-1530482817083-29ae4b92ff15.jpg"); */
+ padding: 0 10%;
+ padding-top: 30px;
+ display: flex;
+ flex-wrap: wrap;
+
+ }
+
+mat-card-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 325px;
+    margin:0px auto;
+    margin-top: 10px;
+    position: relative;
+    top:0;
+    left: 0;
+}
+
+
+mat-card{
+    background-color: #746969;
+    display: flex;
+    flex-wrap: wrap;
+
+     height: 100%;
+   }
+   body{
+       background-color: #424242;
+
+   }
+mat-card{
+    height: auto;
+
+}
+
+.row.is-flex {
+
+    margin:5px;
+}
+

@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="example-spacer"></span>
+
+    <button mat-button routerLink="/movies" >Strona Główna</button>
+
+
+
+    <button mat-button [matMenuTriggerFor]="animals" *ngIf="this.authService.isUserLoggedIn && user.account.accessRight==='Admin'">Admin</button>
+    <mat-menu #animals="matMenu" >
+      <button mat-menu-item [routerLink]="['actors']">Aktorzy</button>
+      <!-- <button mat-menu-item [routerLink]="['details/actor']">Aktor</button> -->
+      <button mat-menu-item [routerLink]="['movies']">Filmy</button>
+      <button mat-menu-item [routerLink]="['movie/add']">Dodaj film</button>
+      <button mat-menu-item [routerLink]="['actors']">Aktorzy</button>
+      <button mat-menu-item [routerLink]="['actor/add']">Dodaj aktora</button>
+      <button mat-menu-item [routerLink]="['/users']">Użytkownicy</button>
+    </mat-menu>
+    <button mat-button [routerLink]="['/movies']" *ngIf="this.user.account.accessRight ==='Client' || !this.authService.isUserLoggedIn || this.authService.isUserLoggedIn" >Filmy</button>
+    <button mat-button [routerLink]="['/actors']" *ngIf="this.user.account.accessRight ==='Client' || !this.authService.isUserLoggedIn || this.authService.isUserLoggedIn" >Aktorzy</button>
+    <button mat-button [routerLink]="['/login']" *ngIf="!this.authService.isUserLoggedIn">Logowanie</button>
+    <button mat-button [matMenuTriggerFor]="menu"  *ngIf="this.authService.isUserLoggedIn">Profil</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/profile/view']">Zobacz profil</button>
+      <button mat-menu-item [routerLink]="['/lists']">Playlisty</button>
+      <button mat-menu-item [routerLink]="['/favorite']">Ulubione</button>
+      <button mat-menu-item [routerLink]="['/reviews']">Recenzje</button>
+      <button mat-menu-item [routerLink]="['/profile/edit']">Edytuj profil</button>
+      <button mat-menu-item  (click)="this.authService.logout()">Wyloguj</button>
+    </mat-menu>
+
+
+    <form class="example-form">
+      <!--     <mat-form-field class="example-full-width">
+        <input matInput placeholder="Szukaj" matInput:password>
+      </mat-form-field> -->
+    </form>
+  </mat-toolbar-row>
+</mat-toolbar>

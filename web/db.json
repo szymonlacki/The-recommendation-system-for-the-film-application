@@ -1,0 +1,71 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Transformers 3",
+      "desc": "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz",
+      "poster_path": "//upload.wikimedia.org/wikipedia/en/thumb/8/8f/Fast_and_Furious_Poster.jpg/220px-Fast_and_Furious_Poster.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Szybcy i wściekli",
+      "desc": "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz",
+      "poster_path": "//upload.wikimedia.org/wikipedia/en/thumb/8/8f/Fast_and_Furious_Poster.jpg/220px-Fast_and_Furious_Poster.jpg"
+    },
+    {
+      "login": "aaaaaa",
+      "password": "aaaaaa",
+      "currentPassword": "aaaaaa"
+    },
+    {
+      "id": 3,
+      "title": "Transporter",
+      "desc": "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz"
+    },
+    {
+      "id": 4,
+      "title": "Hobbit",
+      "desc": "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz "
+    },
+    {
+      "login": "asdasd",
+      "password": "asdasdsad",
+      "id": 5
+    },
+    {
+      "login": "aaaaaaaaaaa",
+      "password": "aaaaaaaaaaaaaa",
+      "id": 6
+    },
+    {
+      "login": "",
+      "password": "dupaaa",
+      "id": 7
+    },
+    {
+      "login": "",
+      "password": "dupa",
+      "id": 8
+    },
+    {
+      "login": "wwwwwwwwwwwwwwwwwwww",
+      "password": "wwwwwwwwwwwwwwwwwwwww",
+      "id": 9
+    },
+    {
+      "login": "tttttttttttttttttttttt",
+      "password": "tttttttttttttttttttttttttt",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": {
+    "name": null
+  }
+}

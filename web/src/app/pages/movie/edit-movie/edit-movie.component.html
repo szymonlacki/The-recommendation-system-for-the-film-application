@@ -1,0 +1,171 @@
+<body>
+
+  <div class="container">
+    <div class="row">
+      <h4 class="col-md-12 pages-header">Edytuj film</h4>
+
+      <!--TYTUŁ-->
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3 edit-movie-header">
+            <span>Tytuł:</span>
+          </div>
+          <div class="col-md-9 edit-movie-content">
+            <mat-form-field appearance="outline">
+              <mat-label>Tytul</mat-label>
+              <input matInput placeholder="tytul">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+ <!--czas trwania-->
+ <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-3 edit-movie-header">
+        <span>Czas trwania:</span>
+      </div>
+      <div class="col-md-9 edit-movie-content">
+        <mat-form-field appearance="outline">
+          <mat-label>120min</mat-label>
+          <input matInput placeholder="120min">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <!--rok produkcji-->
+ <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-3 edit-movie-header">
+        <span>Rok produkcji:</span>
+      </div>
+      <div class="col-md-9 edit-movie-content">
+        <mat-form-field appearance="outline">
+          <mat-label>2018</mat-label>
+          <input matInput placeholder="2018">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  
+
+  <!--premiera-->
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 edit-movie-header">
+          <span>Premiera:</span>
+        </div>
+        <div class="col-md-9 edit-movie-content">
+          <mat-form-field appearance="outline">
+            <mat-label>20-10-2017</mat-label>
+            <input matInput placeholder="20-10-2017">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+  <!--kraj produkcji-->
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 edit-movie-header">
+          <span>Kraj produkcji:</span>
+        </div>
+        <div class="col-md-9 edit-movie-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Polska</mat-label>
+            <input matInput placeholder="Polska">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+  <!--gatunek-->
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 edit-movie-header">
+          <span>Gatunek:</span>
+        </div>
+        <div class="col-md-9 edit-movie-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Komedia</mat-label>
+            <input matInput placeholder="Komedia">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+  <!--język-->
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 edit-movie-header">
+          <span>Język:</span>
+        </div>
+        <div class="col-md-9 edit-movie-content">
+          <mat-form-field appearance="outline">
+            <mat-label>PL</mat-label>
+            <input matInput placeholder="PL">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+  <!--opis-->
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 edit-movie-header">
+          <span>Opis:</span>
+        </div>
+        <div class="col-md-9 edit-movie-content">
+          <mat-form-field appearance="outline">
+            <mat-label>opis</mat-label>
+            <input matInput placeholder="opis">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+  <!--aktorzy-->
+
+  <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 edit-movie-header">
+          <span>Aktorzy:</span>
+        </div>
+        <div class="col-md-9 edit-movie-content">
+          <mat-form-field appearance="outline">
+            <mat-label>aktorzy</mat-label>
+            <input matInput placeholder="aktorzy">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+      <!--plik-->
+      <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3 edit-movie-header">
+              <span>Plik</span>
+            </div>
+            <div class="col-md-9 edit-movie-content">
+                <div class="add-field add-img ">
+                    <input type="file" (change)="readImage($event)">
+                  </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      <button mat-raised-button color="accent" class="add-movie-button col-lg-11">Edytuj</button>
+    </div>
+  </div>
+
+  
+</body>

@@ -1,0 +1,89 @@
+body{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: absolute;
+  overflow: hidden;
+  background-size: cover;
+  background-image: url("https://d1jo0zet24jmxt.cloudfront.net/content/16231/fd6c10658b3f4de0987837c27f60dbc5_compressed.jpg");
+}
+
+mat-form-field{
+    float: left;
+}
+.add-movie-container{
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 10px;
+     
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+mat-card{
+  border-radius: 5px;
+  opacity: 0.95;
+}
+  button{
+    background-color: #c2185b;
+    border-radius: 5px;
+    
+}
+  .example-container > * {
+    width: 30%;
+    margin:0 auto;
+    margin-top: 15px;
+  }
+
+  .container{
+    width: 60%;
+  }
+  .input-group-prepend{
+   padding: 0;
+   display: flex;
+   max-width: 50px;
+   /*flex-direction: column-reverse;*/
+   
+  }
+
+  .add-movie-header{
+    margin-top: 15px;
+
+  } 
+
+
+  .add-movie-content{
+    height: 40px;
+  }
+
+  .add-movie-label, .add-movie-content{
+    margin-top: 15px;
+  }
+
+  .add-movie-text, .add-movie-text-description{
+    display: flex;
+    height: 56.5px;
+    align-items: center;
+    align-items: flex-end;
+  }
+
+  .add-movie-text-description{
+    height: 90px;
+  }
+
+  .add-movie-content > *{
+    width: 80%;
+    margin:0;
+   
+  }
+
+  .add-movie-button{
+    margin-top: 25px;
+  }
+
+ button{
+   margin:12px auto;
+ }
+

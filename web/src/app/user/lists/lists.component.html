@@ -1,0 +1,79 @@
+<app-profile-menu></app-profile-menu>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body *ngIf = "this.movieLists?.length; else noList">
+
+
+
+<!-- Jak coś to tu menu -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="movieTitle" style="color:white;">Moje listy filmów:</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container movie-container" *ngFor="let movieList of movieLists">
+    <div class="row">
+      <div class="col-md-2 favorite-img">
+        <!-- <img src="{{movie.movie_poster_path}}" alt="" class="thumbnail"> -->
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+
+          <div class="col-md-12">
+            <h2 class="movieTitle">{{movieList.name}}</h2>
+          </div>
+          <div class="col-md-12">
+            <p class="description-text">
+              {{movieList.description}}
+            </p>
+          </div>
+
+
+
+        </div>
+        <div class="dropdown">
+            <button mat-raised-button    (click)="getMoviesByMovieListID(movieList.movie_List_Id)">Wyświetl filmy</button>
+          <div class="dropdown-content" >
+            <div class="gallery" *ngFor="let movie of movies">
+
+                <img src="/assets/images/{{movie.movieTitle}}.jpg" style="cursor:pointer" alt="film" width="600" height="400"  routerLink="/movies/{{movie.movieId}}">
+
+              <div class="title">{{movie.movieTitle}}               <span class="close"   matTooltip="Usuń film z listy" (click)="deleteMovieFromMovieList(movieList.movie_List_Id, movie.movieId)">&times;</span>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<script>
+
+      function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+        }
+      }
+      </script>
+    -->
+</body>
+
+<ng-template #noList style="color:red">
+  <h2 class="movieTitle" style="color:red">Nie posiadasz jeszcze żadnych list :(</h2>
+
+</ng-template>

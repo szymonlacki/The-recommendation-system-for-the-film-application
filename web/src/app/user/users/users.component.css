@@ -1,0 +1,44 @@
+
+body{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: absolute;
+    background-size: cover;
+    background-image: url("http://www.visitaurora.com/wp-content/uploads/2017/08/Movie-Tavern-Blog-Hero-Image.jpg");
+
+}
+.pages-header{
+    background-color: white;
+    margin-top: 15px;
+    height: 30px;
+    margin-bottom: -5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+mat-expansion-panel {
+    width: 80%;
+    margin:0 auto;
+
+}
+
+mat-form-field{
+    display: block;
+
+}
+
+.container{
+    width: 100%;
+}
+
+.user-header{
+    height: 25px;
+}
+.user-content{
+    height: 60px;
+}
+
+.user-table{
+  /*  border-right: 0.3px  dotted lightgrey;*/
+}

@@ -1,0 +1,59 @@
+<app-profile-menu></app-profile-menu>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-card>
+          <mat-card-content>
+            <h2 class="example-h2">Średnia ocen</h2>
+
+            <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="70" [diameter]="185" style="widows: 200px; height:200px;">
+            </mat-progress-spinner>
+            <div class="col-md-1 percent">
+              <p class="percent-number">{{userAverage|number:'1.0-1'}}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-md-4">
+        <mat-card>
+          <mat-card-content>
+            <h2 class="example-h2">Liczba ocen</h2>
+
+            <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="60" [diameter]="185" style="widows: 200px; height:200px;">
+            </mat-progress-spinner>
+            <div class="col-md-1 percent">
+              <p class="percent-number">{{quantityOfRating}}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+
+      <div class="col-md-4">
+        <mat-card>
+          <mat-card-content>
+            <h2 class="example-h2">Liczba playlist</h2>
+
+            <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="20" [diameter]="185" style="widows: 200px; height:200px;">
+            </mat-progress-spinner>
+            <div class="col-md-1 percent">
+              <p class="percent-number">{{quantityOfMoviesList}}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</body>

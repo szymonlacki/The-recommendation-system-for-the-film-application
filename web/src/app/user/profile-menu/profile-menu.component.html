@@ -1,0 +1,66 @@
+<div class="user">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 user-name">
+        <div class="row">
+          <div class="col-md-2 user-name-img">
+            <p class="user-avatar">{{user.account.login.split("")[0]}}</p>
+          </div>
+
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-12 user-name-text">
+                <h1>{{user.account.login}}</h1>
+              </div>
+
+              <div class="col-md-12 user-statistic">
+                <div class="col-md-5 spinner-progress">
+                  <mat-progress-spinner class="user-statistic-example-margin" [color]="color" [mode]="mode" [value]="80" [diameter]="80" style="widows: 200px; height:200px;">
+                  </mat-progress-spinner>
+                  <div class="col-md-1 user-statistic-percent">
+                    <p class="user-statistic-percent-number">{{userAverage|number:'1.0-1'}}</p>
+                  </div>
+                  <h2 class="col-md-8 user-statistic-example">Średnia ocen filmów</h2>
+                </div>
+
+                <div class="col-md-6 spinner-progress">
+                  <mat-progress-spinner class="user-statistic-example-margin" [color]="color" [mode]="mode" [value]="20" [diameter]="80" style="widows: 200px; height:200px;">
+                  </mat-progress-spinner>
+                  <div class="col-md-1 user-statistic-percent">
+                    <p class="user-statistic-percent-number" >{{quantityOfRating}}</p>
+                  </div>
+                  <h2 class="col-md-5 user-statistic-example">Liczba ocen</h2>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-user-bg">
+
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link menu-user-text" [routerLink]="['/profile/view']">Przegląd</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link menu-user-text" [routerLink]="['/profile/edit']">Edytuj profil</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link menu-user-text menu-user-text-active" [routerLink]="['/lists']">Playlisty</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link menu-user-text" [routerLink]="['/favorite']">Ulubione</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link menu-user-text"  [routerLink]="['/reviews']" >Recenzje</a>
+    </li>
+  </ul>
+
+</div>
