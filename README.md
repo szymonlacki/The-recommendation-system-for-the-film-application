@@ -1,4 +1,4 @@
-# ThSystem rekomendacji dla aplikacji filmowej
+# System rekomendacji dla aplikacji filmowej
 
 Projekt polegał na opracowaniu systemu rekomendacji pozwalającego na proponowanie
 użytkownikom potencjalnie interesujących ich filmów. Założeniem projektu było stworzenie szeregu
